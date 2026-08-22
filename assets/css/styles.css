@@ -162,6 +162,16 @@ a {
   margin: 0 0 1.5rem;
 }
 
+#credentials h2 {
+  margin-bottom: 0.4rem;
+}
+
+.credentials-subtitle {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin: 0 0 1.5rem;
+}
+
 /* Credentials */
 
 .credentials-list {
