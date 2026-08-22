@@ -187,6 +187,24 @@ a {
   font-size: 0.92rem;
 }
 
+.credentials-list strong a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--color-border);
+  text-underline-offset: 3px;
+}
+
+.credentials-list strong a:hover {
+  text-decoration-color: currentColor;
+}
+
+.btn-small {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+
 /* Contact */
 
 .contact-details {
