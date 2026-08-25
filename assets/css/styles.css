@@ -6,8 +6,36 @@
   --color-primary: #0b3d5c;
   --color-accent: #1e8fb8;
   --color-border: #e2e6ea;
+  --color-cta-bg: #0b3d5c;
+  --color-cta-text: #ffffff;
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --max-width: 1000px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg: #10161d;
+    --color-bg-alt: #1a222c;
+    --color-text: #e7ecf1;
+    --color-text-muted: #9fb0bf;
+    --color-primary: #7fc4ea;
+    --color-accent: #3fc7e8;
+    --color-border: #2b3846;
+    --color-cta-bg: #1c5f8a;
+    --color-cta-text: #ffffff;
+  }
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #10161d;
+  --color-bg-alt: #1a222c;
+  --color-text: #e7ecf1;
+  --color-text-muted: #9fb0bf;
+  --color-primary: #7fc4ea;
+  --color-accent: #3fc7e8;
+  --color-border: #2b3846;
+  --color-cta-bg: #1c5f8a;
+  --color-cta-text: #ffffff;
 }
 
 * {
@@ -24,6 +52,7 @@ body {
   color: var(--color-text);
   background: var(--color-bg);
   line-height: 1.6;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 h1, h2 {
@@ -92,6 +121,46 @@ a {
   display: flex;
   align-items: center;
   color: var(--color-primary);
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  color: var(--color-accent);
+}
+
+.theme-toggle .icon-sun {
+  display: none;
+}
+
+.theme-toggle .icon-moon {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun {
+    display: block;
+  }
+
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon {
+    display: none;
+  }
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+  display: block;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
 }
 
 .nav-toggle {
@@ -247,8 +316,8 @@ a.credential-card-inner:focus-visible {
 }
 
 .btn-primary {
-  background: var(--color-primary);
-  color: #fff;
+  background: var(--color-cta-bg);
+  color: var(--color-cta-text);
 }
 
 .btn-secondary {
